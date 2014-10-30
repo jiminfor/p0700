@@ -9,3 +9,5 @@
 /vendor/
 /bin/
 /composer.phar
+/app/Resources/java/
+/app/Resources/public/vendor/

@@ -1,0 +1,3 @@
+jim_p0700:
+    resource: "@JimP0700Bundle/Resources/config/routing.yml"
+    prefix:   /

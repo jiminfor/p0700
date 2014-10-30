@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  {% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site_title }}{% block title %}{% endblock %}</title>
+  {% stylesheets
+    '@bootstrap_less'
+    filter='less,cssrewrite,yui_css' output='css/compiled/main.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+  {% endblock %}
+</head>
+<body>
+{% set current_route = app.request.attributes.get('_route') %}
+
+{% block content %}{% endblock %}
+
+{% block javascripts %}
+{% javascripts
+  '@jquery_js'
+  '@bootstrap_js'
+  '@JimP0700Bundle/Resources/public/js/common.js'
+  filter='yui_js' output='js/compiled/main.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock javascripts %}
+</body>
+</html>
